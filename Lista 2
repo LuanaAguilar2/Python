@@ -1,0 +1,247 @@
+Exercício 1
+num1=float(input("Digite o primeiro número: "))
+num2=float(input("Digite o segundo número: "))
+if num1>num2:
+ print("O número maior é: ", num1)
+else:
+  print("o número maior é: ", num2)
+
+Exercício 2
+carnes= {
+    "file duplo:": {"até 5 kg": 4.90, "acima de 5kg": 5.80},
+    "alcatra": {"até 5 kg": 5.90, "acima de 5kg": 6.80},
+    "picanha":{"até 5 kg": 5.90, "acima de 5 kg": 7.80}
+}
+
+tipo_carne= input("tipo de carne(file duplo, alcatra ou picanha): ")
+quant= float(input("qual a quantidade desejada(em kg)"))
+
+cartao= input("possui cartão tabajaras ? ").strip().lower()
+desconto= 0.05 if cartao == ("sim") else 0.00
+
+if quant <= 5:
+  preco_total = (carnes[tipo_carne]["até 5 kg"] * quant)
+else:
+  preco_total= (carnes[tipo_carne]["acima de 5 kg"] * quant)
+
+valor_com_desc= preco_total * (1- desconto )
+print("\n cupom físcal")
+print(f"tipo de carne: ",tipo_carne)
+print(f"quantidade",quant)
+print(f"tipo de pagamento: ",cartao)
+print(f"valor do desconto: ",desconto)
+print(f"valor total: ",preco_total )
+
+Exercício 3
+alcool=float(input("digite o litro de alcool: "))
+alcool_preco=(1.90 * alcool)
+if alcool <= 20:
+  print(f"o desconto no álcool é de: {alcool_preco*(alcool*0.03)}")
+gasolina=float(input("digite o litro de gasolina: "))
+gasolina_preco=(2.50 * gasolina)
+if alcool <= 20:
+  print(f"o desconto final na gasolina é: {gasolina_preco*(gasolina*0.04)}")
+else:
+  print("não possui desconto")
+
+Exercício 4
+c_sim=0
+per1= input("telefonou para a vítima? ").lower()
+if per1== "sim":
+  c_sim += 1
+per2= input("esteve no local do crime? ")
+if per2== "sim":
+  c_sim +=1
+per3=input("mora perto da vítima? ")
+if per3== "sim":
+  c_sim += 1
+per4=input("devia paraa vítima? ")
+if per4== "sim":
+  c_sim += 1
+per5=input("já trabalhou com a vítima? ")
+if per5 == "sim":
+  c_sim += 1
+
+if c_sim == 2:
+  print("suspeito")
+elif c_sim == 3:
+  print("cúmplice")
+elif c_sim == 5:
+  print("assassino")
+else:
+  print("inocente")
+
+Exercício 5
+
+num_1=float(input("digite um número: "))
+num_2=float(input("digite outro número: "))
+num3=(num_1+num_2)
+ope=input(''' digite a operação que seja realizar:
+1: par ou impar
+2: positivo ou negativo
+3: inteiro ou decimal
+''')
+match 0:
+  case 1:
+    if (num3%2) == 0:
+      print("o número é par")
+    else:
+      print("o número é impar")
+  case 2:
+    if num3 >= 0:
+      print("o número é negativo")
+    else:
+       print("o número é positivo")
+  case 3:
+    if num3 // 1 == num3:
+      print("o número é inteiro")
+    else:
+      print("o número é decimal")
+
+Exercício 6
+
+def caixa_elet():
+  valor_saque= int(input("digite o valor do saque(entre 10 e 600 reais): "))
+  if valor_saque < 10 or valor_saque > 600:
+    print("valor de sque inálido. o valor deve estar entre 10 e 600 reais")
+    return
+ notas_100 = 0
+ notas_50 = 0
+ notas_10 = 0
+ notas_5 = 0
+ notas_1 = 0
+  while valor_saque >= 100:
+    valor_saque -= 100
+    notas_100 += 1
+  while valor_saque >= 50:
+    valor_saque -= 50
+    notas_50 += 1
+  while valor_saque >= 10:
+    valor_saque -= 10
+    notas_10 += 1
+  while valor_saque >= 5:
+    valor_saque -= 5
+    notas_10 += 1
+  while valor_saque >= 1:
+    valor_saque -= 1
+    notas_10 += 1
+if notas_100 > 0:
+  print(f"notas de 100 reais:", notas_100)
+if nota_50 > 0:
+  print(f"notas de 50 reais:", notas_50)
+if nota_10 > 0:
+  print(f"notas de 10 reais:", notas_10)
+if nota_5 > 0:
+  print(f"notas de 5 reais:", notas_5)
+if nota_1 > 0:
+  print("notas de 1 real: ", nota_1)
+
+  print("saque concluído com sucesso")
+
+caixa_elet()
+
+Exercício 7
+
+ano=float (input("digite um ano: "))
+if ano %4 == 0 and ano %100 != 0 or ano %400 == 0:
+  print("o ano é bissexto")
+else:
+  print("o ano não é bissexto")
+
+Exercício 8
+a=float(input("digite o primeiro número: "))
+if a==0 :
+  print("não é uma equação do segundo grau")
+b=float(input("digite o segundo número: "))
+c=float(input("digite o terceiro número: "))
+equacao= ax**2 + bx + c
+if delta == -:
+  print("a equação não possui raiz")
+
+Exercício 9
+nota1=float(input("digite a primeira nota: "))
+nota2=float(input("digite a segunda nota: "))
+media= (nota1 + nota2 )/2
+if media > 9.0 and 10.0:
+  print("conceito A ")
+  print("aprovado")
+if media == 7.5 and 9.0:
+  print(" conceito B")
+  print("aprovado")
+if media == 6.0 and 7.5:
+  print("Conceito C")
+  print("aprovado")
+if media == 4.0 and 6.0:
+  print("conceito D")
+  print("reprovado")
+elif media == 4.0 and 0:
+  print("conceito E")
+  print("reprovado")
+
+Exercício 10
+
+dia=input("digite um número de 1 a 7 para saber o dia da semana : ")
+if dia == "1":
+  print("o dia da semana é domingo")
+elif dia == "2":
+  print("o dia da semana é segunda")
+elif dia == " 3":
+  print("o dia da semana é terça")
+elif dia == "4":
+ print("o dia da semana é quarta")
+elif dia == "5":
+  print("o dia da semana é quinta")
+elif dia == "6":
+  print("o dia da semana é sexta")
+elif dia == "7":
+ print("o dia da semana é sábado")
+else:
+ print(" valor inválido")
+
+Exercício 11 
+
+#entrada de dados
+sal=float(input("Digite o valor do seu salário: "))
+# processo
+if sal <= 280.00:
+ sal_rea=(sal*0.2)
+ sal_total=(sal_rea + sal)
+ print("salário atual é: ", sal)
+ print("O percentural de aumento foi 20%")
+ print("o aumento foi de: ", sal_rea)
+ print("O salário final é: ", sal_total)
+
+elif sal > 280 and sal < 700:
+ sal_rea=(sal*0.15)
+ sal_total=(sal_rea + sal)
+ print("salário atual é: ", sal)
+ print("O percentural de aumento foi 15%")
+ print("o aumento foi de: ", sal_rea)
+ print("O salário final é: ", sal_total)
+elif sal > 700 and sal < 1500:
+ sal_rea=(sal*0.10)
+ sal_total=(sal_rea + sal)
+ print("salário atual é: ", sal)
+ print("O percentural de aumento foi 10%")
+ print("o aumento foi de: ", sal_rea)
+ print("O salário final é: ", sal_total)
+elif sal > 1500:
+ sal_rea=(sal*0.05)
+ sal_total=(sal_rea + sal)
+ print("salário atual é: ", sal)
+ print("O percentural de aumento foi de 5%")
+ print("o aumento foi de: ", sal_rea)
+ print("O salário final é: ", sal_total)
+
+Exercício 12 
+# entrada de dados
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+num3 = float(input("Digite o terceiro número: "))
+
+# processo
+numeros = [num1, num2, num3]
+numeros_ordem_decrescente = sorted(numeros, reverse=True)
+
+# saída de dados
+print("Números em ordem decrescente:", numeros_ordem_decrescente)
