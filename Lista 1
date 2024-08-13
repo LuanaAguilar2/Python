@@ -138,9 +138,160 @@ elif sal > 1500:
  print("O salário final é: ", sal_total)
 
 exercicio 12 
-exercicio 13
-exercicio 14
-exercicio 15
-exercicio 16 
-exercicio 17
 
+horas=float(input("digite o valor das horas trabalhadas"))
+quant_h=float(input("Digite a quantidade de horas trabalhdas ao mês: "))
+isento= 0
+sal_bruto= (horas*quant_h)
+ir=5%
+inss=10%
+fgts=11%
+total_desc=(ir+inss+fgts)
+sal_liq=(sal_bruto - total_desc)
+if sal_bruto <=900:
+  print("o salário é: ", sal bruto)
+elif sal_bruto <= 1500:
+  sal_bruto=(sal_bruto*0.05)
+  print("o saláruo é: ", sal bruto)
+
+exercicio 13
+dia=input("digite um número de 1 a 7 para saber o dia da semana : ")
+if dia == "1":
+  print("o dia da semana é domingo")
+elif dia == "2":
+  print("o dia da semana é segunda")
+elif dia == " 3":
+  print("o dia da semana é terça")
+elif dia == "4":
+ print("o dia da semana é quarta")
+elif dia == "5":
+  print("o dia da semana é quinta")
+elif dia == "6":
+  print("o dia da semana é sexta")
+elif dia == "7":
+ print("o dia da semana é sábado")
+else:
+ print(" valor inválido")
+
+exercicio 14
+
+nota1=float(input("digite a primeira nota: "))
+nota2=float(input("digite a segunda nota: "))
+media= (nota1 + nota2 )/2
+if media > 9.0 and 10.0:
+  print("conceito A ")
+  print("aprovado")
+if media == 7.5 and 9.0:
+  print(" conceito B")
+  print("aprovado")
+if media == 6.0 and 7.5:
+  print("Conceito C")
+  print("aprovado")
+if media == 4.0 and 6.0:
+  print("conceito D")
+  print("reprovado")
+elif media == 4.0 and 0:
+  print("conceito E")
+  print("reprovado")
+
+exercicio 15
+
+lado1=float(input("Digite o primeiro lado: "))
+lado2=float(input("Digite o segundo lado: "))
+lado3=float(input("Digite o terceiro lado: "))
+if (lado1 + lado2) > lado3 or (lado2 + lado3) > lado1 or (lado3 + lado1) > lado2:
+  print("é um triângulo")
+if lado1 == lado2 == lado3:
+ print(" é um triângulo é equilátero")
+if lado1 == lado2 != lado3 or lado1 == lado3 != lado2:
+  print("é um triângulo isóceles")
+elif lado1 != lado2 != lado3:
+  print("é um triângulo escaleno")
+
+exercicio 16 
+def caixa_elet():
+  valor_saque= int(input("digite o valor do saque(entre 10 e 600 reais): "))
+  if valor_saque < 10 or valor_saque > 600:
+    print("valor de sque inálido. o valor deve estar entre 10 e 600 reais")
+    return
+ notas_100 = 0
+ notas_50 = 0
+ notas_10 = 0
+ notas_5 = 0
+ notas_1 = 0
+  while valor_saque >= 100:
+    valor_saque -= 100
+    notas_100 += 1
+  while valor_saque >= 50:
+    valor_saque -= 50
+    notas_50 += 1
+  while valor_saque >= 10:
+    valor_saque -= 10
+    notas_10 += 1
+  while valor_saque >= 5:
+    valor_saque -= 5
+    notas_10 += 1
+  while valor_saque >= 1:
+    valor_saque -= 1
+    notas_10 += 1
+if notas_100 > 0:
+  print(f"notas de 100 reais:", notas_100)
+if nota_50 > 0:
+  print(f"notas de 50 reais:", notas_50)
+if nota_10 > 0:
+  print(f"notas de 10 reais:", notas_10)
+if nota_5 > 0:
+  print(f"notas de 5 reais:", notas_5)
+if nota_1 > 0:
+  print("notas de 1 real: ", nota_1)
+
+  print("saque concluído com sucesso")
+
+caixa_elet()
+exercicio 17
+carnes= {
+    "file duplo:": {"até 5 kg": 4.90, "acima de 5kg": 5.80},
+    "alcatra": {"até 5 kg": 5.90, "acima de 5kg": 6.80},
+    "picanha":{"até 5 kg": 5.90, "acima de 5 kg": 7.80}
+}
+
+tipo_carne= input("tipo de carne(file duplo, alcatra ou picanha): ")
+quant= float(input("qual a quantidade desejada(em kg)"))
+
+cartao= input("possui cartão tabajaras ? ").strip().lower()
+desconto= 0.05 if cartao == ("sim") else 0.00
+
+if quant <= 5:
+  preco_total = (carnes[tipo_carne]["até 5 kg"] * quant)
+else:
+  preco_total= (carnes[tipo_carne]["acima de 5 kg"] * quant)
+
+valor_com_desc= preco_total * (1- desconto )
+print("\n cupom físcal")
+print(f"tipo de carne: ",tipo_carne)
+print(f"quantidade",quant)
+print(f"tipo de pagamento: ",cartao)
+print(f"valor do desconto: ",desconto)
+print(f"valor total: ",preco_total )
+ 
+exercicio 18
+
+quant_mo=float(input("informe a quantidade de morangos: "))
+quant_ma= float(input("informe a quantidade de maçãs: "))
+
+preco_mo= 0
+preco_ma= 0
+
+if quant_mo <= 5:
+   preco_mo= quant_mo * 2.50
+else:
+  preco_mo= quant_mo *2.50
+if quant_ma <= 5:
+    preco_ma= quant_ma * 1.80
+else:
+  preco_ma= quant_ma * 1.50
+valor_total= preco_mo + preco_ma
+if quant_mo + quant_ma > 8 or valor_total> 25.00:
+    desc= valor_total *0.10
+    valor_total -= desc
+print(f"o valor a ser pago: {valor_total:.2f} ")
